@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Bootstrap-sass for CSS
+gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 group :production do
