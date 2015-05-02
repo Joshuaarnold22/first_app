@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
-      t.sting :title
+      t.string :title
       t.text :body
       t.boolean :resolved
 
