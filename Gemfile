@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 # Bootstrap-sass for CSS
 gem 'bootstrap-sass'
+# The faker Gem
+gem 'faker'
+# Pry shell which adds many extra features that aren't available using the IRB shell.
+gem 'pry-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 group :production do
