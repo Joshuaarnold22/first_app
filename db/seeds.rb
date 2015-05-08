@@ -29,3 +29,13 @@ require 'faker'
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+
+  # Create Advertisements
+
+  15.times do
+    Advertisement.create!(
+      title: posts.sample,
+      copy: Faker::Lorem.sentence,
+      price: Faker::Commerce.price
+      )
+  end
