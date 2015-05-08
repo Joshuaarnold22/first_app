@@ -1,2 +1,2 @@
-module AdvertismentsHelper
+module AdvertisementsHelper
 end
