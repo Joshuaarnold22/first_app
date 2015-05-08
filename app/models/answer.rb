@@ -14,7 +14,7 @@ class Answer < ActiveRecord::Base
 
   def recent?
     
-    return created_at > Time.now.3.days.ago
+    return created_at > Time.now.(3).days.ago
   end
 
 end

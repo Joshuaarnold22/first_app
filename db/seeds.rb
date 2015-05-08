@@ -34,7 +34,7 @@ require 'faker'
 
   15.times do
     Advertisement.create!(
-      title: posts.sample,
+      title: Faker::Lorem.sentence,
       copy: Faker::Lorem.sentence,
       price: Faker::Commerce.price
       )

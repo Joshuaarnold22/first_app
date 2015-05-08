@@ -4,8 +4,8 @@
 #
 #  id         :integer          not null, primary key
 #  body       :text
-#  
-#  created_at :datetime         not nullpost_id    :integer
+#  post_id    :integer
+#  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
