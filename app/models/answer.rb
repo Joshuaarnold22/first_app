@@ -8,13 +8,13 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
-class Answer < ActiveRecord::Base
+eRecord::Base
   belongs_to :question
 
   def recent?
     
-    return created_at > Time.now.(3).days.ago
+    return created_at > Ti
+class Answer < Activme.now.(3).days.ago
   end
 
 end
