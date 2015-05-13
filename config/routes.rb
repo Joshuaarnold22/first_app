@@ -1,5 +1,7 @@
 Bloccit::Application.routes.draw do
 
+  resources :questions
+
   resources :advertisements
 
   resources :posts
