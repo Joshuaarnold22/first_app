@@ -1,6 +1,6 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Post.all
   end
 
   def show

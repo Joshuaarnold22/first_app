@@ -1,0 +1,13 @@
+<h1>Question#index</h1>
+<% @questions.each do |post| %>
+  <p><%= link_to post.title, post %></p>
+  <p><%= check_box(@posts, "checked", {}, "1", "0") %><b>Completed</b></p>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+          <% raise "Found post without id: #{post.inspect}" unless post.id %>
+         <%= link_to post.title, post %>
+      </h4>
+    </div>
+  </div>
+<% end %>
