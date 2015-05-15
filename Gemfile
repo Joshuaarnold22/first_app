@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Bootstrap-sass for CSS
 gem 'bootstrap-sass'
+# Figaro gem allows you to safely store and access sensitive credentials using variables.
+gem 'figaro'
 # The Devise gem authenticates users
 gem 'devise'
 # The faker Gem
