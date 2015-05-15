@@ -1,6 +1,7 @@
 Bloccit::Application.routes.draw do
 
   devise_for :users
+  
   resources :questions
 
   resources :advertisements

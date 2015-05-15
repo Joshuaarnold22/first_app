@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Post.all
+    @questions = Question.all
   end
 
   def show
@@ -14,6 +14,28 @@ class QuestionsController < ApplicationController
   def edit
     @question = Question.find(params[:id])
   end
+
+   def create
+     @question = Question.new(params.require(:question).permit(:title, :body, :resolved))
+     if @question.save
+       flash[:notice] = "Question was asked."
+       redirect_to @question
+     else
+       flash[:error] = "There was an error saving the question. Please try again."
+       render :new
+     end
+   end
+
+   def update
+     @question = Question.find(params[:id])
+     if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
+       flash[:notice] = "Question was updated."
+       redirect_to @question
+     else
+       flash[:error] = "There was an error saving the question. Please try again."
+       render :edit
+     end
+   end
 
   def resolved
     @question = Question.new(params.require(:question).permit(:title, :body))

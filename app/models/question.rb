@@ -11,4 +11,13 @@
 #
 
 class Question < ActiveRecord::Base
+  has_many :answers
+
+  def check
+    if resolved
+      'Completed'
+    else
+      'Not Answered'
+    end
+  end
 end
