@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Bootstrap-sass for CSS
 gem 'bootstrap-sass'
+# The Devise gem authenticates users
+gem 'devise'
 # The faker Gem
 gem 'faker'
 # Pry shell which adds many extra features that aren't available using the IRB shell.
