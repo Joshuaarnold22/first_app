@@ -36,8 +36,4 @@ class QuestionsController < ApplicationController
        render :edit
      end
    end
-
-  def resolved
-    @question = Question.new(params.require(:question).permit(:title, :body))
-  end
 end
