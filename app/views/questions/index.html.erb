@@ -3,7 +3,6 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-          <% raise "Found question without id: #{question.inspect}" unless question.id %>
           <%= link_to question.title, question %>
           <p><%= question.check %></p>
       </h4>

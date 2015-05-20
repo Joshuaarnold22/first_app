@@ -6,6 +6,8 @@ gem 'bootstrap-sass'
 gem 'figaro'
 # The Devise gem authenticates users
 gem 'devise'
+# The pundit is a gem that makes it easier to authorize different users for different tasks in your app.
+gem 'pundit'
 # The faker Gem
 gem 'faker'
 # Pry shell which adds many extra features that aren't available using the IRB shell.
