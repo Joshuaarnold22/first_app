@@ -2,11 +2,6 @@ class PostsController < ApplicationController
 
   skip_before_filter :flash_attack, only: [:index, :new]
 
-  def index
-    @posts = policy_scope(Post)
-    authorize @posts
-  end
-
   def show
     @post = Post.find(params[:id])
   end
