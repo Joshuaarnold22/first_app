@@ -37,8 +37,8 @@ require 'faker'
    Post.create!(
     user:  users.sample,
     topic: topics.sample,
-     title:  Faker::Lorem.sentence,
-     body:   Faker::Lorem.paragraph
+    title:  Faker::Lorem.sentence,
+    body:   Faker::Lorem.paragraph
    )
   end
 
@@ -110,25 +110,6 @@ require 'faker'
  )
  member.skip_confirmation!
  member.save!
-
-admin = User.new(
-  name: 'Admin User',
-  email: 'admin@admin.admin',
-  password: 'adminadmin',
-  role: 'admin'
-)
-
-admin.skip_confirmation!
-admin.save!
-
-member = User.new(
-  name: 'User User',
-  email: 'user@user.user',
-  password: 'useruser'
-)
-
-member.skip_confirmation!
-member.save!
 
 puts "Seed Finished"
 puts "#{User.count} users created"
