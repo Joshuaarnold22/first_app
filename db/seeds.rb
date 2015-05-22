@@ -61,15 +61,15 @@ require 'faker'
 
   # Create Questions
 
-  20.times do
-   Question.create!(
-    user:  users.sample,
-     post: Faker::Lorem.sentence,
-     body: Faker::Lorem.paragraph
-   )
-  end
+  # 20.times do
+  #  Question.create!(
+  #    user:  users.sample,
+  #    post: Faker::Lorem.sentence,
+  #    body: Faker::Lorem.paragraph
+  #  )
+  # end
 
-  questions = Question.all
+  # questions = Question.all
  
 user = User.first
 user.skip_reconfirmation!
@@ -77,6 +77,25 @@ user.update_attributes!(
   email:    'joshuaarnold22@gmail.com',
   password: 'lovemyj0sh'
   )
+
+admin = User.new(
+  name: 'Admin User',
+  email: 'admin@admin.admin',
+  password: 'adminadmin',
+  role: 'admin'
+)
+
+admin.skip_confirmation!
+admin.save!
+
+member = User.new(
+  name: 'User User',
+  email: 'user@user.user',
+  password: 'useruser'
+)
+
+member.skip_confirmation!
+member.save!
 
 puts "Seed Finished"
 puts "#{User.count} users created"
