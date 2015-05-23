@@ -1,10 +1,10 @@
-class SummaryController < ApplicationController
+class SummariesController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = @topic.post.find(params[:post_id])
     @summary = @post.summary
   end
-  
+
   def new
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
