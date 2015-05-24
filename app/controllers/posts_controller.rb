@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
-    @summary = @post.summary
   end
 
   def new
@@ -15,8 +14,9 @@ class PostsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(post_params)
+    @post.topic = @topic
     authorize @post
-    if @post.save!
+    if @post.save
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
