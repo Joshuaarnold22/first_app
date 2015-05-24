@@ -1,5 +1,8 @@
 <h1><%= @post.title %></h1>
 
+<% if @post.summary.description != nil %>
+  <h3><%= @post.summary.description %></h3>
+<% end %>
 <div class="row">
   <div class="col-md-8">
     <p><%= @post.body %></p>
