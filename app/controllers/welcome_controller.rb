@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    @my_name = "Josh"
   end
 
   def contact

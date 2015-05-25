@@ -1,13 +1,5 @@
 Bloccit::Application.routes.draw do
 
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/new'
-
   devise_for :users
   resources :users, only: [:update]
 
