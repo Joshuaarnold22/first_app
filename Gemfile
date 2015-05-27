@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Redcarpet is a markdown library
+gem 'redcarpet'
 # Bootstrap-sass for CSS
 gem 'bootstrap-sass'
 # Figaro gem allows you to safely store and access sensitive credentials using variables.
