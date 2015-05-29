@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+# Carrierwave is a gem to allow users to upload images
+gem 'carrierwave'
+# Fog initializer helps support Amazons S3 file storage.
+gem 'fog'
+# MiniMagick is a way to adjust image sizing
+gem 'mini_magick'
 # Redcarpet is a markdown library
 gem 'redcarpet'
 # Bootstrap-sass for CSS

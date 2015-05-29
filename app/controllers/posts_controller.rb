@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @topic = @post.topic
     @summary = @post.summary
+    # raise
   end
 
   def new
@@ -48,6 +49,6 @@ class PostsController < ApplicationController
   private
 
    def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image)
   end
 end

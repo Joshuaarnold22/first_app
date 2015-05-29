@@ -4,6 +4,11 @@
 <% end %>
 <div class="row">
   <div class="col-md-8">
+    <small>
+      <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+      submitted <%= time_ago_in_words (@post.created_at) %> ago by
+      <%= @post.user.name %>
+    </small>
     <p><%= @post.markdown_body %></p>
   </div>
   <div class="col-md-4">
@@ -11,5 +16,8 @@
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
+      <% if @post.image? %>
+        <%= image_tag @post.image.url(:profile) %>
+      <% end %>
   <%= link_to "Create", new_post_summary_path(@post, @summary), class: 'btn btn-success' %>
 </div>
