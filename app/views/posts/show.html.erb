@@ -8,5 +8,6 @@
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
+    <%= link_to "Create a Summary", new_post_summary_path(@topic, @post), class: 'btn btn-success' %>
   </div>
 </div>

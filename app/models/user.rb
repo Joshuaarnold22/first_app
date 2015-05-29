@@ -20,6 +20,8 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime
 #  updated_at             :datetime
+#  role                   :string
+#  avatar                 :string
 #
 
 class User < ActiveRecord::Base
