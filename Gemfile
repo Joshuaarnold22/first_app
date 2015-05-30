@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 # Carrierwave is a gem to allow users to upload images
 gem 'carrierwave'
 # Fog initializer helps support Amazons S3 file storage.
