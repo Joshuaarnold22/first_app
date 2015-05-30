@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @topic = @post.topic
     @summary = @post.summary
+    # raise
   end
 
   def new

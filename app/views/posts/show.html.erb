@@ -1,7 +1,9 @@
 <h1><%= @post.markdown_title %></h1>
-<h3><%= @post.summary.description %></h3>
-<% if (@post.summary != nil) %>
+
+<% if (@post.summary == nil) %>
   <%= link_to "Create a Summary", new_topic_post_summary_path(@topic, @post), class: 'btn btn-success' %>
+<% else %>
+  <h3><%= @post.summary.description %></h3>
 <% end %>
 <div class="row">
   <div class="col-md-8">
