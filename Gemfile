@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# will_paginate is a gem that helps present multiple post on sub-pages
+gem 'will_paginate', '~> 3.0.5'
 # Carrierwave is a gem to allow users to upload images
 gem 'carrierwave'
 # Fog initializer helps support Amazons S3 file storage.

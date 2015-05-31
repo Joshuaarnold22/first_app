@@ -3,12 +3,6 @@ class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
-<<<<<<< HEAD
-    @topic = @post.topic
-    @summary = @post.summary
-    # raise
-=======
->>>>>>> Checkpoint-44-Uploading Images
   end
 
   def new
