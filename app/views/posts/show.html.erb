@@ -1,25 +1,30 @@
+<<<<<<< HEAD
 <h1><%= @post.markdown_title %></h1>
 
 <% if (@post.summary == nil) %>
   <%= link_to "Create a Summary", new_topic_post_summary_path(@topic, @post), class: 'btn btn-success' %>
 <% else %>
   <h3><%= @post.summary.description %></h3>
+=======
+<%if @post.image? %>
+  <div class="form-group">
+    <%= image_tag @post.image.url(:thumb) %>
+  </div>
+>>>>>>> Checkpoint-44-Uploading Images
 <% end %>
+<h1><%= markdown @post.title %></h1>
+
 <div class="row">
   <div class="col-md-8">
     <small>
-      <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
-      submitted <%= time_ago_in_words (@post.created_at) %> ago by
-      <%= @post.user.name %>
+      <%= image_tag @post.user.avatar.url(:tiny) if @post.user.avatar? %> 
+      submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
     </small>
-    <p><%= @post.markdown_body %></p>
+    <p><%= markdown @post.body %></p>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
-      <% if @post.image? %>
-        <%= image_tag @post.image.url(:profile) %>
-      <% end %>
 </div>

@@ -43,12 +43,6 @@ require 'faker'
   end
 
  posts = Post.all
-
- #unique_post = [{title: 'This is a new unique title', body: 'This is a new unique body'}] #why can't I place this in the first Post.create!? & what is [{}] about?
-
- #unique_post.each do |attributes|
- #   Post.create(attributes) unless Post.where(attributes).first
- # end
  
  # Create Comments
 
@@ -59,28 +53,6 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
   end
-
-  # Create Advertisements
-
-  15.times do
-    Advertisement.create!(
-      title: Faker::Lorem.sentence,
-      copy: Faker::Lorem.sentence,
-      price: Faker::Commerce.price
-      )
-  end
-
-  # Create Questions
-
-  # 20.times do
-  #  Question.create!(
-  #    user:  users.sample,
-  #    post: Faker::Lorem.sentence,
-  #    body: Faker::Lorem.paragraph
-  #  )
-  # end
-
-  # questions = Question.all
  
  # Create an admin user
  admin = User.new(
