@@ -21,6 +21,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :string
+#  avatar                 :string
 #
 
 class User < ActiveRecord::Base
@@ -29,6 +30,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :posts
+  has_many :comments
   mount_uploader :avatar, AvatarUploader
 
   def admin?
