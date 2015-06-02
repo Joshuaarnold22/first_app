@@ -9,7 +9,8 @@
     <p><%= markdown @post.body %></p>
     <p><%= @comment %></p>
       <%= render @comments %>  <!--Are we rendering the model? -->
-      <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %> <!-- Where is this leading to? -->
+      <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %> 
+      <!-- Where is this leading to? -->
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
