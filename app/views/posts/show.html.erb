@@ -7,7 +7,7 @@
       submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
     </small>
     <p><%= markdown @post.body %></p>
-    <p><%= @comment %></p>
+    <p>Comment</p>
       <%= render @comments %>  <!--Are we rendering the model? -->
       <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %> <!-- Where is this leading to? -->
   </div>
