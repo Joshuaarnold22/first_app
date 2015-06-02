@@ -1,0 +1,11 @@
+<% if current_user %>
+  <h4>Add a comment:</h4>
+  <%= form_for [topic, post, comment] do |f| %> <!-- Is this a path topic, post, comment?  why not @topic, etc.? -->
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control', placeholder: "Enter a comment" %>
+      <br>
+      <%= f.submit "Add Comment", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+<% end %>
