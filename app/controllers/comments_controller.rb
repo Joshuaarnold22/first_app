@@ -5,30 +5,28 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id]) #the pathway?
     @comment = @post.comments.new(comment_params) #comment_params? Connection?
     @comment.user_id = current_user.id # what? Is this for the Model?
     #authorize @comment -- Why not authorize?
     if @comment.save
-      redirect_to [@topic, @post], notice: "Comment was posted."
+      redirect_to [@post.topic, @post], notice: "Comment was posted." #from [@topic, @post]?
     else
-      redirect_to [@topic, @post], notice: "Error posting comment.  Please try again."
+      redirect_to [@post.topic, @post], notice: "Error posting comment.  Please try again."
     end
   end
 
   def destroy
-    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comment.find(params[:id])
     
     authorize @comment
     if @comment.destroy?
       flash[:notice] = "Your comment has been deleted."
-      redirect_to [@topic, @post]
+      redirect_to [@post.topic, @post]
     else
       flash[:error] = "Your comment was unable to be deleted."
-      redirect_to [@topic, @post]
+      redirect_to [@post.topic, @post]
     end
   end
 
