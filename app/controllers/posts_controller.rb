@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @comment = @post.comments.build #Isn't build the same as new? And why comments?
+    # @comment = @post.comments.build <- #Isn't build the same as new? And why comments? Why place in show?
   end
 
   def new
@@ -43,6 +43,19 @@ class PostsController < ApplicationController
     else
       flash[:error] = "Sorry. There was an error saving the post. Please try again."
       render :edit
+    end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:id])
+    authorize @post
+    if @post.destroy
+      flash[:notice] = "#{@post.title} has been deleted"
+      redirect_to @topic #I had this error "Missing Template" when this was gone
+    else 
+      flash[:error] = "There has been a error deleting your post."
+      render :show
     end
   end
 
