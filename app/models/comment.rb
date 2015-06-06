@@ -7,7 +7,6 @@
 #  post_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  topic_id   :integer
 #  user_id    :integer
 #
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605142111) do
+ActiveRecord::Schema.define(version: 20150606190243) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -35,12 +35,10 @@ ActiveRecord::Schema.define(version: 20150605142111) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "topic_id"
     t.integer  "user_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "posts", force: :cascade do |t|
@@ -52,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150605142111) do
     t.integer  "topic_id"
     t.string   "image"
     t.integer  "comment_id"
+    t.float    "rank"
   end
 
   add_index "posts", ["comment_id"], name: "index_posts_on_comment_id"
