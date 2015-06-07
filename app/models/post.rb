@@ -28,7 +28,6 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
-
   def up_votes
     votes.where(value: 1).count
   end
@@ -46,5 +45,9 @@ class Post < ActiveRecord::Base
     new_rank = points + age_in_days
 
     update_attribute(:rank, new_rank) #:rank with new_rank?
+  end
+
+  def create_vote
+    user.votes.create(value: 1, post: self) #direction? post: self?
   end
 end
