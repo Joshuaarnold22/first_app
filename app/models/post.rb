@@ -50,4 +50,8 @@ class Post < ActiveRecord::Base
   def create_vote
     user.votes.create(value: 1, post: self) #direction? post: self?
   end
+
+  def save_with_initial_vote
+    self.save #what about creating the vote?
+  end
 end
