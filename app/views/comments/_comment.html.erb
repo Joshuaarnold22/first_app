@@ -1,4 +1,4 @@
-<div class="media">
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
   <div class="media-left">
     <small>
       <%= (image_tag comment.user.avatar.url(:tiny), class: "media-object") if comment.user.avatar? %> 
@@ -12,4 +12,4 @@
       <% end %>
     <p><%= comment.body %></p>  
   </div>
-</div>
+<% end %>

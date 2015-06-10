@@ -22,7 +22,7 @@ describe Post do
 
     before do
       @post = associated_post
-      3.times { @post.votes.create(value: 1) }
+      3.times { @post.votes.create(value: 1) } #how does double work?
       2.times { @post.votes.create(value: -1) }
     end
 
