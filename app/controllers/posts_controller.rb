@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     @comments = @post.comments
+    authorize @topic
     # @comment = @post.comments.build <- #Isn't build the same as new? And why comments? Why place in show?
   end
 
