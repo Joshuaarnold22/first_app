@@ -26,7 +26,7 @@ module ApplicationHelper
     down = "glyphicon glyphicon-chevron-down"
     vote = current_user.voted(post)
     if vote && vote.down_vote?
-      down += "Voted"  #why connect to down with "Voted"?
+      down += " voted"  #why connect to down with "Voted"?
     end
   end
 end
