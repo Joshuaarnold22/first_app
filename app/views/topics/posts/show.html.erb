@@ -30,7 +30,7 @@
 <div class="row">
   <p>Comments</p>
     <div class="col-md-6">
-      <%= render @comments %>  <!--Are we rendering the model? -->
+      <%= render partial: 'comments/comment', collection: @comments %>  <!--Are we rendering the model? -->
       <%= render 'comments/form', topic: @topic, comment: @post.comments.build, post: @post %> 
       <!-- Where is this leading to? -->
   </div>
