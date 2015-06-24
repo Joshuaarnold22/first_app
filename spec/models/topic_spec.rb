@@ -10,13 +10,13 @@
 #  updated_at  :datetime         not null
 #
 
+require 'rails_helper'
  describe Topic do
    describe "scopes" do
  
      before do 
        @public_topic = Topic.create # default is public
        @private_topic = Topic.create(public: false)
-       @all_if_user = Topic.all if user.present?
      end
  
      describe "publicly_viewable" do
@@ -34,12 +34,12 @@
      describe "visible_to(user)" do
        it "returns all topics if the user is present" do
          user = true # sneaky solution; we don't need a real user, just something truthy
-         expect(Topic.visible_to).to eq( [@all_if_user] )
+         expect(Topic.visible_to(user)).to eq( Topic.all )
        end
  
        it "returns only public topics if user is nil" do
          user = nil # sneaky solution; we don't need a real user, just something truthy
-         expect(Topic.visible_to).to eq( [@public_topic] )
+         expect(Topic.visible_to(user)).to eq( [@public_topic] )
        end
      end
    end
