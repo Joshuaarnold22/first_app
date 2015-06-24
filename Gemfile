@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'newrelic_rpm'
 # will_paginate is a gem that helps present multiple post on sub-pages
 gem 'will_paginate', '~> 3.0.5'
 # Carrierwave is a gem to allow users to upload images
