@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = @topic.posts.find(params[:post_id]) #the pathway?
+    @post = Post.find(params[:post_id]) #the pathway?
     @comment = @post.comments.new(comment_params) #comment_params? Connection?
     @comment.user_id = current_user.id # what? Is this for the Model?
     #authorize @comment -- Why not authorize?
@@ -18,15 +18,18 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = @post.comment.find(params[:id])
+    @comment = @post.comments.find(params[:id])
     
     authorize @comment
-    if @comment.destroy?
+    if @comment.destroy
       flash[:notice] = "Your comment has been deleted."
-      redirect_to [@post.topic, @post]
     else
       flash[:error] = "Your comment was unable to be deleted."
-      redirect_to [@post.topic, @post]
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

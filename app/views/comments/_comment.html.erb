@@ -8,7 +8,7 @@
     <br>
     <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
       <% if policy(comment).destroy? %>
-        <%= link_to "Delete", [comment.post, comment], method: :delete %> <!-- Why no @comment? -->
+        <%= link_to "Delete", [comment.post, comment], method: :delete, remote: true %>
       <% end %>
     <p><%= comment.body %></p>  
   </div>
