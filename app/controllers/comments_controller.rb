@@ -1,18 +1,23 @@
 class CommentsController < ApplicationController
 
-  def new #need a new?  What is the differnce with new and create?
-    @comment = Comment.new
-  end
 
   def create
-    @post = Post.find(params[:post_id]) #the pathway?
-    @comment = @post.comments.new(comment_params) #comment_params? Connection?
-    @comment.user_id = current_user.id # what? Is this for the Model?
-    #authorize @comment -- Why not authorize?
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+
+    @comment = current_user.comments.build( comment_params )
+    @comment.post = @post
+    @new_comment = Comment.new
+
     if @comment.save
-      redirect_to [@post.topic, @post], notice: "Comment was posted." #from [@topic, @post]?
+      flash[:notice] = "Comment was created."
     else
-      redirect_to [@post.topic, @post], notice: "Error posting comment.  Please try again."
+      flash[:error] = "There was an error saving the comment. Please try again."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

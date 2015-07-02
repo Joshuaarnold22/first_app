@@ -28,10 +28,12 @@
 </div>
 
 <div class="row">
-  <p>Comments</p>
-    <div class="col-md-6">
+  <h2>Comments</h2>
+    <div class='js-comments'>
       <%= render partial: 'comments/comment', collection: @comments %>  <!--Are we rendering the model? -->
-      <%= render 'comments/form', topic: @topic, comment: @post.comments.build, post: @post %> 
-      <!-- Where is this leading to? -->
+    </div>
+    <div class='new-comment'>
+      <%= render 'comments/form', post: @post, comment: @comment %>
+    </div>
   </div>
 </div>

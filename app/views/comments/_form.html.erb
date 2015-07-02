@@ -1,6 +1,6 @@
 <% if current_user %>
   <h4>Add a comment:</h4>
-  <%= form_for [post, comment] do |f| %> <!-- Is this a path topic, post, comment?  why not @topic, etc.? -->
+  <%= form_for [@post, @post.comments.build], remote: true do |f| %> <!-- Is this a path topic, post, comment?  why not @topic, etc.? -->
     <div class="form-group">
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', placeholder: "Enter a comment" %>
